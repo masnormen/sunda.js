@@ -1,22 +1,25 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import babel from "@rollup/plugin-babel";
+import prettier from "rollup-plugin-prettier";
+
 import pkg from "./package.json";
 
 export default {
-  input: "src/index.ts",
+  input: pkg.source,
   plugins: [
     resolve({
       moduleDirectory: ["node_modules"],
     }),
     babel({
       exclude: "node_modules/**",
-      extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".ts"],
+      extensions: [".ts", ".js"],
       babelHelpers: "runtime",
     }),
     commonjs({
-      extensions: [".js", ".ts"],
+      extensions: [".ts", ".js"],
     }),
+    prettier(),
   ],
   output: [
     {

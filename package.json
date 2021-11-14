@@ -1,7 +1,7 @@
 {
   "name": "sunda.js",
   "version": "1.0.0",
-  "description": "Sunda.js is a small library for converting/transliterating Latin script into Sundanese script, also known as Aksara Sunda Baku.",
+  "description": "Sunda.js is a small library for converting/transliterating Latin into Sundanese script (Aksara Sunda Baku), or vice versa.",
   "homepage": "https://github.com/masnormen/sunda.js",
   "repository": {
     "type": "git",
@@ -18,6 +18,7 @@
     "sundanese",
     "transliterate"
   ],
+  "source": "src/index.ts",
   "main": "dist/umd/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -36,7 +37,6 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
-    "core-js": "^3.19.1",
     "string-match-all": "^1.1.1"
   },
   "devDependencies": {
@@ -57,6 +57,7 @@
     "jest": "^27.3.1",
     "prettier": "^2.4.1",
     "rollup": "^2.59.0",
+    "rollup-plugin-prettier": "^2.2.0",
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"

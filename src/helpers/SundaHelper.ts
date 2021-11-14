@@ -1,7 +1,7 @@
-import { SundaChars } from "../constants/constants";
+import { SundaneseChars } from "../constants/constants";
 
 /**
- * @description Provides many helper function to get Sundanese unicode characters based on the type
+ * @description Provides many helper function to get Sundanese unicode characters from Latin characters
  */
 namespace SundaHelper {
   /**
@@ -10,8 +10,8 @@ namespace SundaHelper {
    */
   export const getMain = (char: string): string => {
     if (char == null) return "";
-    if (char in SundaChars.SWARA) return SundaChars.SWARA[char];
-    if (char in SundaChars.NGALAGENA) return SundaChars.NGALAGENA[char];
+    if (char in SundaneseChars.SWARA) return SundaneseChars.SWARA[char];
+    if (char in SundaneseChars.NGALAGENA) return SundaneseChars.NGALAGENA[char];
     return char;
   };
 
@@ -21,7 +21,7 @@ namespace SundaHelper {
    */
   export const getSonorant = (char: string): string => {
     if (char == null) return "";
-    if (char in SundaChars.RARANGKEN_SONORANT) return SundaChars.RARANGKEN_SONORANT[char];
+    if (char in SundaneseChars.RARANGKEN_SONORANT) return SundaneseChars.RARANGKEN_SONORANT[char];
     return char;
   };
 
@@ -32,7 +32,8 @@ namespace SundaHelper {
   export const getRarangken = (char: string): string => {
     if (char == null) return "";
     if (char === "a") return "";
-    if (char in SundaChars.RARANGKEN) return SundaChars.RARANGKEN[char];
+    if (char === "e`") return SundaneseChars.RARANGKEN["é"];
+    if (char in SundaneseChars.RARANGKEN) return SundaneseChars.RARANGKEN[char];
     return char;
   };
 
@@ -42,8 +43,7 @@ namespace SundaHelper {
    */
   export const getFinal = (char: string): string => {
     if (char == null) return "";
-    if (char in SundaChars.NGALAGENA)
-      return SundaChars.NGALAGENA[char] + SundaChars.RARANGKEN["pamaeh"];
+    if (char in SundaneseChars.NGALAGENA) return SundaneseChars.NGALAGENA[char] + SundaneseChars.RARANGKEN["pamaeh"];
     return char;
   };
 
@@ -53,7 +53,7 @@ namespace SundaHelper {
    */
   export const getNumber = (char: string): string => {
     if (char == null) return "";
-    if (char in SundaChars.ANGKA) return SundaChars.ANGKA[char];
+    if (char in SundaneseChars.ANGKA) return SundaneseChars.ANGKA[char];
     return char;
   };
 }

@@ -1,9 +1,9 @@
 import { preferNative as matchAll } from "string-match-all";
 import SundaHelper from "../helpers/SundaHelper";
-import { SyllableBuilder } from "../helpers/SyllableBuilder";
+import SyllableBuilder from "../helpers/SyllableBuilder";
 import { SundaConst } from "../constants/constants";
 
-export const toSundanese = (input: string): string => {
+const toSundanese = (input: string): string => {
   /* Normalize input */
   input = input.trim().toLowerCase();
 
@@ -12,7 +12,7 @@ export const toSundanese = (input: string): string => {
    * iterate and feed it into the syllable converter,
    * and append the result to the output string.
    */
-  const syllables = [...matchAll(input, RegExp(SundaConst.REGEX.CAPTURE_SYLLABLE, "g"))];
+  const syllables = [...matchAll(input, RegExp(SundaConst.REGEX.CAPTURE_LATIN, "g"))];
 
   let output = "";
   if (syllables.length > 0) {
@@ -20,14 +20,13 @@ export const toSundanese = (input: string): string => {
       output += getTransliteration(group);
     }
   }
-  console.log(output);
   return output;
 };
 
 /**
  * @description Converts the already broken down syllable into Sundanese script
  */
-const getTransliteration = (matchGroups: RegExpMatchArray): string => {
+const getTransliteration = (groups: RegExpMatchArray): string => {
   /* Assign each capture groups into variable names */
   const [
     digits,
@@ -38,7 +37,7 @@ const getTransliteration = (matchGroups: RegExpMatchArray): string => {
     consonantRarangken,
     consonantFinal,
     consonantStandalone,
-  ] = matchGroups.slice(1, 10);
+  ] = groups.slice(1, 10);
 
   const builder = new SyllableBuilder();
 
@@ -56,7 +55,7 @@ const getTransliteration = (matchGroups: RegExpMatchArray): string => {
     return builder.build(punctuation);
   }
 
-  /* Converts syllable containing letters */
+  /* Converts syllable containing main letters */
   if (consonantStandalone == null) {
     if (consonantMain != null) {
       /* Add main consonant */
@@ -85,3 +84,5 @@ const getTransliteration = (matchGroups: RegExpMatchArray): string => {
   }
   return builder.build();
 };
+
+export default toSundanese;

@@ -1,0 +1,1 @@
+{"version":3,"file":"SyllableBuilder.d.ts","sourceRoot":"","sources":["../../../src/helpers/SyllableBuilder.ts"],"names":[],"mappings":"AAGA,cAAM,eAAe;IACnB,MAAM,EAAE,MAAM,CAAC;;IAIf,GAAG,CAAC,KAAK,EAAE,MAAM,GAAG,IAAI;IAGxB,KAAK,CAAC,KAAK,CAAC,EAAE,MAAM,GAAG,MAAM;CAI9B;AAED,eAAe,eAAe,CAAC"}

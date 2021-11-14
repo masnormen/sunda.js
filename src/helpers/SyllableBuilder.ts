@@ -1,7 +1,7 @@
 /**
- * @classdesc A simple class that helps to compile and build the transliterated syllable
+ * @description A simple class that helps to compile and build the transliterated syllable.
  */
-export class SyllableBuilder {
+class SyllableBuilder {
   result: string;
   constructor() {
     this.result = "";
@@ -14,3 +14,5 @@ export class SyllableBuilder {
     return this.result;
   }
 }
+
+export default SyllableBuilder;
