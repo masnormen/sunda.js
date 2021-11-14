@@ -1,6 +1,6 @@
 {
   "name": "sunda.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sunda.js is a small library for converting/transliterating Latin into Sundanese script (Aksara Sunda Baku), or vice versa.",
   "homepage": "https://github.com/masnormen/sunda.js",
   "repository": {
