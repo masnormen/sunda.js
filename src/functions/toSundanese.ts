@@ -7,7 +7,6 @@ import { SundaConst } from "../constants/constants";
  * @function toSundanese
  * @description Transliterate a string in Latin characters into its corresponding form in Sundanese script.
  * @param input The input string in Latin to be converted.
- * @param config The options for the conversion.
  * @returns The converted string in Sundanese script.
  * @example
  * toSundanese("Wih, geulis euy!")
