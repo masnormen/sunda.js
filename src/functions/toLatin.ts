@@ -3,6 +3,16 @@ import LatinHelper from "../helpers/LatinHelper";
 import SyllableBuilder from "../helpers/SyllableBuilder";
 import { SundaConst, SundaneseChars } from "../constants/constants";
 
+/**
+ * @function toLatin
+ * @description Transliterate a string in Sundanese characters into its corresponding form in Latin.
+ * @param input The input string in Sundanese script to be converted.
+ * @param config The options for the conversion.
+ * @returns The converted string in Latin.
+ * @example
+ * toLatin("ᮝᮤᮂ, ᮌᮩᮜᮤᮞ᮪ ᮉᮚ᮪!")
+ * // => Wih, geulis euy!
+ */
 const toLatin = (input: string): string => {
   /* Trim input */
   input = input.trim();

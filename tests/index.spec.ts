@@ -1,6 +1,6 @@
 import { toSundanese, toLatin } from "../src";
 
-describe("Sundanese to Latin tests", () => {
+describe("Latin to Sundanese tests", () => {
   it("should convert the basic letters", () => {
     const result = toSundanese("ka ga nga ca ja nya ta da na pa ba ma ya ra la wa sa ha fa qa va xa za kha");
     expect(result).toBe("ᮊ ᮌ ᮍ ᮎ ᮏ ᮑ ᮒ ᮓ ᮔ ᮕ ᮘ ᮙ ᮚ ᮛ ᮜ ᮝ ᮞ ᮠ ᮖ ᮋ ᮗ ᮟ ᮐ ᮮ");
@@ -19,7 +19,7 @@ describe("Sundanese to Latin tests", () => {
   });
 });
 
-describe("Latin to Sundanese tests", () => {
+describe("Sundanese to Latin tests", () => {
   it("should convert the basic letters", () => {
     const result = toLatin("ᮊ ᮌ ᮍ ᮎ ᮏ ᮑ ᮒ ᮓ ᮔ ᮕ ᮘ ᮙ ᮚ ᮛ ᮜ ᮝ ᮞ ᮠ ᮖ ᮋ ᮗ ᮟ ᮐ ᮮ");
     expect(result).toBe("ka ga nga ca ja nya ta da na pa ba ma ya ra la wa sa ha fa qa va xa za kha");
